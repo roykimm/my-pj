@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Nheader from "../components/Nheader";
-import Nheader2 from "../components/Nheader2";
+import Nheader from "../../components/Nheader";
+import Nheader2 from "../../components/Nheader2";
 
 const Compare = () => {
     return (
@@ -11,7 +11,7 @@ const Compare = () => {
             </Head>
             <Nheader />
             <Nheader2 gb="3" />
-            비교분석
+            비교분석1
         </div>
     )
 }
