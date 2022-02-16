@@ -36,12 +36,12 @@ const TodayVisotor = ({todayVisotor}) => {
             display: false,
             text: '오늘자 방문객',
           },
-          labels: {
-            // This more specific font property overrides the global property
-                font: {
-                    size: 14
-                }
-          }
+          // labels: {
+          //   // This more specific font property overrides the global property
+          //       font: {
+          //           size: 14
+          //       }
+          // }
         },
       };
     
@@ -60,17 +60,28 @@ const TodayVisotor = ({todayVisotor}) => {
       };  
 
     const chartData = {
-        labels: todayVisotor.map((crypto) => crypto.name),
+        labels: todayVisotor.map((crypto) => crypto.title),
         datasets: [
             {
-                label: "Price in USD",
-                data: todayVisotor.map((crypto) => crypto.priceUsd),
+                // label: "Price in USD",
+                data: todayVisotor.map((crypto) => crypto.data),
                 backgroundColor: [
-                    "#ffbb11",
-                    "#ecf0f1",
-                    "#50AF95",
-                    "#f3ba2f",
-                    "#2a71d0"
+                    "#d98aac",
+                    "#009688",
+                    "#e2af5a",
+                    "#673AB7",
+                    "#3F51B5",
+                    "#2196F3",
+                    "#03A9F4",
+                    "#00BCD4",
+                    "#009688",
+                    "#4CAF50",
+                    "#CDDC39",
+                    "#FFEB3B",
+                    "#FFC107",
+                    "#FF9800",
+                    "#4D2F40",
+                    "#2a71d0",
                 ],
                 color : "white"
             }
@@ -84,7 +95,7 @@ const TodayVisotor = ({todayVisotor}) => {
                 <p className="font-semibold">오늘자 방문객</p>
             </div>
             <div className="mt-3">
-                <Bar options={options} data={data} />
+                <Bar options={options} data={chartData} />
             </div>
             
             {/* {

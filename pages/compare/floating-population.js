@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import AnalysisComponent from "../../components/AnalysisComponent";
 import Nbottom from "../../components/Nbottom";
@@ -7,10 +6,13 @@ import Nheader from "../../components/Nheader";
 import Nheader2 from "../../components/Nheader2";
 import { compareAsc, format , startOfMonth , lastDayOfMonth } from 'date-fns'
 import Slider from "../../components/Slider";
+import { useEffect, useState } from "react";
+import TodayVisotor from "../../components/chart/TodayVisotor";
+import axios from "axios";
 
 
-const Compare = () => {
-
+const FloatingPopulation = ({todayVisotor}) =>{
+    
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
@@ -41,7 +43,6 @@ const Compare = () => {
                         <button className="text-sm bg-orange-400 px-4 py-1 rounded-md ml-5 text-white hover:bg-orange-500 hover:text-gray-200">검색</button>
                     </div>
                 </div>
-                {/* 방문객 통계 */}
                 {/* 방문객 통계 */}
                 <div className="flex space-x-2 justify-center items-center py-2 text-white">
                     {/* 좌측 통계 */}
@@ -83,63 +84,35 @@ const Compare = () => {
                     </div>
                 </div>
 
-                {/* carousel 부분 */}
-                <section className="relative mt-7 shadow-2xl max-w-screen-3xl mx-auto">
-                    <Carousel
-                        autoPlay
-                        infiniteLoop
-                        showStatus={true}
-                        showIndicators={false}
-                        showThumbs={true}
-                        interval={5000}
-                    >
-                        <div className="">
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                        </div>
-                        <div className="">
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                            <div className="flex justify-center items-center space-x-5 py-2">
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                                <AnalysisComponent />
-                            </div>
-                        </div>
-                    </Carousel>
-                </section>
+                {/* 그래프 */}
+                <div className="flex mx-auto text-center justify-center text-white">
+                    <div className="w-[800px] mx-1 my-1">
+                        <TodayVisotor todayVisotor={todayVisotor}/>
+                    </div>
+                    <div className="w-[800px] mx-1 my-1">
+                        <TodayVisotor todayVisotor={todayVisotor}/>
+                    </div>
+                </div>
 
                 {/* 하단 navigation */}
                 <div className="fixed bottom-0 w-full">
-                    <Nbottom gb="1"/>
+                    <Nbottom gb="2"/>
                 </div>
-
+                
             </div>
         </div>
     )
 }
 
-export default Compare;
+export default FloatingPopulation;
 
+export async function getServerSideProps(context) {
+  
+    const todayVisotor = await axios.post(`${process.env.RESTAPI_URL}/getMainVisitGraph`);
 
+    return {
+        props : {
+            todayVisotor: todayVisotor.data.data,
+        }
+    }
+}

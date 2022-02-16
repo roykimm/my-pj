@@ -3,6 +3,7 @@ import Head from "next/head";
 import TodayVisotor from "../components/chart/TodayVisotor";
 import Nheader from "../components/Nheader";
 import Nheader2 from "../components/Nheader2";
+import axios from 'axios';
 
 const Analysis = ({todayVisotor}) => {
 
@@ -131,21 +132,27 @@ export default Analysis;
 export async function getServerSideProps(context) {
   
     console.log(33)
-    const [
-        todayVisotor,
-    ] = await Promise.all([
-      fetch(
-        `${process.env.RESTAPI_URL}/getMainVisitGraph`
-      )
-    ]);
-    const [todayVisotorData] =
-      await Promise.all([
-        todayVisotor.json(),
-      ]);
+    // const [
+    //     todayVisotor,
+    // ] = await Promise.all([
+    //   fetch(
+    //     `${process.env.RESTAPI_URL}/getMainVisitGraph`, {
+    //         headers : {
+    //             'Accept' : 'application/json'
+    //         }
+    //     }
+    //   )
+    // ]);
+    // const [todayVisotorData] =
+    //   await Promise.all([
+    //     todayVisotor.json(),
+    //   ]);
+
+    const todayVisotor = await axios.post(`${process.env.RESTAPI_URL}/getMainVisitGraph`);
   
     return {
       props : {
-        todayVisotor: todayVisotorData.data,
+        todayVisotor: todayVisotor.data.data,
       }
     }
   }

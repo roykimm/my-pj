@@ -2,6 +2,7 @@ import Head from "next/head";
 import Nheader from "../components/Nheader";
 import Nheader2 from "../components/Nheader2";
 import {useRouter} from "next/Router"
+import { SearchIcon } from "@heroicons/react/solid";
 
 const Report = () => {
 
@@ -15,8 +16,8 @@ const Report = () => {
             </Head>
             <Nheader />
             <Nheader2 gb="4" />
-            <div className="max-w-[500px] bg-white shadow-lg rounded-sm border border-slate-200 mt-5 text-center mx-auto">
-                <header className="px-5 py-4 border-b border-slate-100">
+            <div className="max-w-[500px] bg-white shadow-lg rounded-sm border border-slate-200 mt-5 text-center mx-auto py-5">
+                <header className="px-5 py-2 border-b border-slate-100">
                     <h2 className="font-semibold text-slate-800">주요관광지 유동인구 분석자료</h2>
                     
                 </header>
@@ -41,7 +42,7 @@ const Report = () => {
                                 <div className="font-semibold text-center">분석의견</div>
                             </th>
                             <th className="p-2">
-                                <div className="font-semibold text-center">이동</div>
+                                <div className="font-semibold text-center">상세보기</div>
                             </th>
                         </tr>
                         </thead>
@@ -56,7 +57,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue" onClick={() => router.push('/monthreport/id=1')}>보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +71,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -78,7 +85,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +99,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -100,7 +113,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -111,7 +127,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -122,7 +141,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -133,7 +155,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -144,7 +169,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +183,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -166,7 +197,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
                         <tr>
@@ -177,7 +211,10 @@ const Report = () => {
                                 <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded items-center" />
                             </td>
                             <td className="p-2">
-                                <button className="my-btn-blue">보기</button>
+                                <button className="my-btn-blue flex justify-center items-center mx-auto" onClick={() => router.push('/monthreport/id=1')}>
+                                    <SearchIcon  className="w-5 h-5" />
+                                    보기
+                                </button>
                             </td>
                         </tr>
 
