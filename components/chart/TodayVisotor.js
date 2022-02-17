@@ -30,34 +30,21 @@ const TodayVisotor = ({todayVisotor}) => {
         responsive: true,
         plugins: {
           legend: {
+            display: true,
             position: 'bottom',
           },
           title: {
             display: false,
             text: '오늘자 방문객',
           },
-          // labels: {
-          //   // This more specific font property overrides the global property
-          //       font: {
-          //           size: 14
-          //       }
-          // }
+          labels: {
+            // This more specific font property overrides the global property
+                font: {
+                    size: 14
+                }
+          }
         },
       };
-    
-      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-      const data = {
-        labels,
-        datasets: [
-          {
-            label: 'Dataset 1',
-            data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            borderWidth: 1
-          },
-        ],
-      };  
 
     const chartData = {
         labels: todayVisotor.map((crypto) => crypto.title),
@@ -83,7 +70,6 @@ const TodayVisotor = ({todayVisotor}) => {
                     "#4D2F40",
                     "#2a71d0",
                 ],
-                color : "white"
             }
         ]
     }
@@ -94,8 +80,8 @@ const TodayVisotor = ({todayVisotor}) => {
                 <GlobeIcon className="mr-2 w-5 h-5 text-white dark:text-blue-500" />
                 <p className="font-semibold">오늘자 방문객</p>
             </div>
-            <div className="mt-3">
-                <Bar options={options} data={chartData} />
+            <div className="mt-3 ">
+                <Bar options={options} data={chartData}/>
             </div>
             
             {/* {
